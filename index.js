@@ -5,6 +5,7 @@ const fs = require("fs");
 const app = express();
 const allCampaigns = require("./routes/allcampaigns");
 const individualCampaigns = require("./routes/campaign");
+const allArtists = require("./routes/artists");
 
 app.use(cors());
 app.use(express.json());
@@ -17,3 +18,4 @@ app.use(express.static("public"));
 
 app.use("/allcampaigns", allCampaigns);
 app.use("/campaign", individualCampaigns);
+app.use("/artists", allArtists);
