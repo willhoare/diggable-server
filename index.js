@@ -3,46 +3,25 @@ const cors = require("cors");
 const { v4 } = require("uuid");
 const fs = require("fs");
 const app = express();
-const allCampaigns = require("./routes/allcampaigns");
-const individualCampaigns = require("./routes/campaigns");
 const allArtists = require("./routes/artists");
+const allCampaigns = require("./routes/allcampaigns");
 const jwt = require("jsonwebtoken");
 const fileupload = require("express-fileupload");
 const bodyParser = require("body-parser");
+const path = require("path");
 
 app.use(cors());
 app.use(express.json());
+app.use(fileupload());
 
 app.listen(8080, () => {
   console.log("Server is running");
 });
 
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "public")));
 
-app.use("/allcampaigns", allCampaigns);
-app.use("/campaignpage", individualCampaigns);
 app.use("/artists", allArtists);
-
-/// trying image upload approach 2
-
-app.use(cors());
-app.use(fileupload());
-app.use(express.static("files"));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-
-app.post("/upload", (req, res) => {
-  const newpath = __dirname + "/files/";
-  const file = req.files.file;
-  const filename = file.name;
-
-  file.mv(`${newpath}${filename}`, (err) => {
-    if (err) {
-      res.status(500).send({ message: "File upload failed", code: 200 });
-    }
-    res.status(200).send({ message: "File Uploaded", code: 200 });
-  });
-});
+app.use("/campaigns", allCampaigns);
 
 ////// Adding Sign up and login features //
 

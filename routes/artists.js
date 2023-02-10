@@ -35,9 +35,35 @@ function getArist() {
   return JSON.parse(artistData);
 }
 
+/// Setting up image upload
+const path = require("path");
+
+const multer = require("multer");
+const { timeStamp } = require("console");
+
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, "./public/images");
+  },
+  filename: (req, file, cb) => {
+    console.log(file);
+    cb(null, Date.now() + path.extname(file.originalname));
+  },
+});
+
+const upload = multer({ storage: storage });
+
+router.post("/", upload.single("testimage"), (req, res) => {
+  console.log(req.file);
+
+  res.send("image uploaded");
+});
+
+//Setting form upload&json Parse
+
 router.post("/", (req, res) => {
-  const newVideoRead = fs.readFileSync("./data/artist-details.json");
-  const allArtists = JSON.parse(newVideoRead);
+  const newArtistRead = fs.readFileSync("./data/artist-details.json");
+  const allArtists = JSON.parse(newArtistRead);
 
   const {
     firstname,
@@ -67,7 +93,7 @@ router.post("/", (req, res) => {
     firstname: firstname,
     lastname: lastname,
     artistname: artistname,
-    profileimage: profileimage,
+    profileimage: "http://localhost:8080/images/284152.jpeg",
     username: username,
     city: city,
     country: country,
