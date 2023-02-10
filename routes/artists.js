@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const fs = require("fs");
 const { v4: uuid } = require("uuid");
+// const upload = multer({ storage: storage });
 
 const artists = require("../data/artist-details.json");
 
@@ -38,30 +39,59 @@ router.post("/", (req, res) => {
   const newVideoRead = fs.readFileSync("./data/artist-details.json");
   const allArtists = JSON.parse(newVideoRead);
 
-  const { firstname, lastname, artistname, username, city, country } = req.body;
+  const {
+    firstname,
+    lastname,
+    artistname,
+    username,
+    city,
+    country,
+    title,
+    description,
+    goal,
+    tourdates,
+    profileimage,
+    first,
+    firstvalue,
+    second,
+    secondvalue,
+    third,
+    thirdvalue,
+    fourth,
+    fourthtvalue,
+    fifth,
+    fifthvalue,
+  } = req.body;
   const newArtist = {
     id: uuid(),
     firstname: firstname,
     lastname: lastname,
     artistname: artistname,
-    image: "http://localhost:8080/images/happy-monday.jpeg",
+    profileimage: profileimage,
     username: username,
     city: city,
     country: country,
 
     campaigns: [
       {
-        id: "35bba08b-1b51-4153-ba7e-6da76b5ec1b9",
-        title: "North American Tour 2023",
-        description:
-          "The Happy Mondays are looking to tour their new album across Narth America in 2023 and are seeking support to help achieve their goal.",
-        goal: 0,
-        tourdates: 1628522461000,
+        id: uuid(),
+        title: title,
+        description: description,
+        goal: goal,
+        totalRaised: 0,
+        tourdates: tourdates,
         rewards: [
           {
-            1: "Personalised Video message",
-            2: "Signed T-shirt",
-            3: "Ticket for location of your choice",
+            first: first,
+            firstvalue: firstvalue,
+            second: second,
+            secondvalue: secondvalue,
+            third: third,
+            thirdvalue: thirdvalue,
+            fourth: fourth,
+            fourthvalue: fourthtvalue,
+            fifth: fifth,
+            fifthvalue: fifthvalue,
           },
         ],
       },
