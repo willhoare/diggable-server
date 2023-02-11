@@ -1,1 +1,16 @@
-{"campaignName":"final test 9","path":"http://localhost:8080/detective-pikachu.png"}
+[
+  {
+    "campaignName": "North American tour 234562346",
+    "path": "http://localhost:8080/detective-pikachu.png",
+    "firstName": "Will",
+    "goal": "25000",
+    "description": "Touring across north america"
+  },
+  {
+    "campaignName": "test again",
+    "path": "http://localhost:8080/morbius.png",
+    "firstName": "Will",
+    "goal": "25000",
+    "description": "Touring across north america"
+  }
+]

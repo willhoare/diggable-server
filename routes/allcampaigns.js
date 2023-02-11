@@ -3,10 +3,11 @@ const fs = require("fs");
 const router = express.Router();
 
 router.post("/", (req, res) => {
-  const { campaignName } = req.body;
-  let image = req.files.image;
+  const newCampaignRead = fs.readFileSync("./data/campaign-details.json");
+  const campaigns = JSON.parse(newCampaignRead);
 
-  console.log(image);
+  const { campaignName, firstName, goal, description } = req.body;
+  let image = req.files.image;
 
   image.mv("./public/" + image.name, (err) => {
     if (err) {
@@ -15,11 +16,16 @@ router.post("/", (req, res) => {
       const newCampaign = {
         campaignName,
         path: `http://localhost:8080/${image.name}`,
+        firstName,
+        goal,
+        description,
       };
+
+      campaigns.push(newCampaign);
 
       fs.writeFileSync(
         "./data/campaign-details.json",
-        JSON.stringify(newCampaign)
+        JSON.stringify(campaigns)
       );
       res.status(201).send("New campaign created");
     }
