@@ -4,7 +4,7 @@
     "firstname": "Shaun",
     "lastname": "Ryder",
     "artistname": "Happy Mondays",
-    "heroImage": "http://localhost:8080/images/happy-monday.jpeg",
+    "image": "http://localhost:8080/images/happy-monday.jpeg",
     "username": "happymondays",
     "city": "Manchester",
     "country": "England",
@@ -15,7 +15,7 @@
         "description": "The Happy Mondays are looking to tour their new album across Narth America in 2023 and are seeking support to help achieve their goal.",
         "goal": "3452162",
         "totalRaised": 0,
-        "heroimage": "http://localhost:8080/images/happy-mondays_6083.jpeg",
+        "image": "http://localhost:8080/images/happy-mondays_6083.jpeg",
         "tourdates": 1628522461000,
         "rewards": [
           {
@@ -32,7 +32,7 @@
     "firstname": "John",
     "lastname": "Lennon",
     "artistname": "The Beatles",
-    "heroImage": "http://localhost:8080/images/284152.jpeg",
+    "image": "http://localhost:8080/images/284152.jpeg",
     "username": "strawberryfieldsforever",
     "city": "Liverpool",
     "country": "England",
@@ -62,15 +62,15 @@
   },
   {
     "id": "10354b73-b631-4da8-b7de-a57a820212c3",
-    "heroImage": "http://localhost:8080/images/Joy_Division_promo_photo.jpeg",
+    "image": "http://localhost:8080/images/Joy_Division_promo_photo.jpeg",
     "artistname": "Joy Division",
     "campaigns": [
       {
         "id": "3216f3fd-5d68-4a2c-8e48-5ab57d792d63",
         "campaignName": "Atmosphere tour",
-        "heroImage": "http://localhost:8080/Joy_Division_promo_photo.jpeg",
-        "goal": "25,000",
-        "totalRaised": 0,
+        "image": "http://localhost:8080/Joy_Division_promo_photo.jpeg",
+        "goal": 25000,
+        "totalRaised": 2000,
         "description": "After creating waves in the UK recently, Joy division are now looking to tour across the US and Canada with your help!",
         "tourdates": "October 1981",
         "rewards": [
@@ -92,13 +92,13 @@
   },
   {
     "id": "b589eb9a-7822-4792-b304-be1005c25203",
-    "heroImage": "http://localhost:8080/images/ab6761610000e5eb12e3f20d05a8d6cfde988715.jpeg",
+    "image": "http://localhost:8080/images/ab6761610000e5eb12e3f20d05a8d6cfde988715.jpeg",
     "artistname": "Beyonce",
     "campaigns": [
       {
         "id": "6783fbe3-d56a-4153-ba1b-f4ade9f18407",
         "campaignName": "Renaissance tour",
-        "heroImage": "http://localhost:8080/ab6761610000e5eb12e3f20d05a8d6cfde988715.jpeg",
+        "image": "http://localhost:8080/ab6761610000e5eb12e3f20d05a8d6cfde988715.jpeg",
         "goal": "250,000",
         "totalRaised": 0,
         "description": "Beyonce is looking to tour across Canada and North America",
@@ -115,6 +115,36 @@
             "fourthRewardValue": "$2000",
             "fifthReward": "free tickets for whole tour",
             "fifthRewardValue": "$5000"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "744c8d33-b37b-46e5-816a-ff6b20e48c6c",
+    "image": "http://localhost:8080/images/rollinstones.jpeg",
+    "artistname": "The Rolling Stones",
+    "campaigns": [
+      {
+        "id": "bcc779b2-366a-4535-9c58-b197b3c28241",
+        "campaignName": "One last test",
+        "image": "http://localhost:8080/rollinstones.jpeg",
+        "goal": "25000",
+        "totalRaised": 0,
+        "description": "Rolling stones will be performing a farewell tour across North america",
+        "tourdates": "summer 2024",
+        "rewards": [
+          {
+            "firstReward": "Free t-shirt",
+            "firstRewardValue": "$5",
+            "secondReward": "Free Ticket in your hometown",
+            "secondRewardValue": "$30",
+            "thirdReward": "Personalised Video message from the band",
+            "thirdRewardValue": "$300",
+            "fourthReward": "Come backstage and meet the band",
+            "fourthRewardValue": "$500",
+            "fifthReward": "",
+            "fifthRewardValue": ""
           }
         ]
       }
