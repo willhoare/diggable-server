@@ -72,6 +72,7 @@ router.post("/", (req, res) => {
     artistname,
     goal,
     description,
+    story,
     tourdates,
     firstReward,
     firstRewardValue,
@@ -84,27 +85,28 @@ router.post("/", (req, res) => {
     fifthReward,
     fifthRewardValue,
   } = req.body;
-  let image = req.files.image;
+  let heroImage = req.files.image;
 
-  image.mv("./public/images/" + image.name, (err) => {
+  heroImage.mv("./public/images/" + heroImage.name, (err) => {
     if (err) {
       return res.status(500).send(err);
     } else {
       const newCampaign = {
         id: uuid(),
-        image: `http://localhost:8080/images/${image.name}`,
+        heroImage: `http://localhost:8080/images/${heroImage.name}`,
         artistname: artistname,
 
         campaigns: [
           {
             id: uuid(),
             campaignName: campaignName,
-            image: `http://localhost:8080/${image.name}`,
+            heroImage: `http://localhost:8080/${heroImage.name}`,
 
             goal: goal,
             totalRaised: 0,
 
             description: description,
+            story: story,
 
             tourdates: tourdates,
 

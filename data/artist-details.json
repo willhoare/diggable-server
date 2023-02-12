@@ -1,1 +1,123 @@
-[{"id":"84e96018-4022-434e-80bf-000ce4cd12b8","firstname":"Shaun","lastname":"Ryder","artistname":"Happy Mondays","image":"http://localhost:8080/images/happy-monday.jpeg","username":"happymondays","city":"Manchester","country":"England","campaigns":[{"id":"35bba08b-1b51-4153-ba7e-6da76b5ec1b9","title":"North American Tour 2023","description":"The Happy Mondays are looking to tour their new album across Narth America in 2023 and are seeking support to help achieve their goal.","goal":"3452162","totalRaised":0,"heroimage":"http://localhost:8080/images/happy-mondays_6083.jpeg","tourdates":1628522461000,"rewards":[{"first":"Personalised Video message","second":"Signed T-shirt","third":"Ticket for location of your choice"}]}]},{"id":"a4d46a86-ea66-4a29-8616-355b93288276","firstname":"John","lastname":"Lennon","artistname":"The Beatles","image":"http://localhost:8080/images/284152.jpeg","username":"strawberryfieldsforever","city":"Liverpool","country":"England","campaigns":[{"id":"35bba08b-1b51-4153-ba7e-6da76b5ec1b9","title":"North American Tour 2023","description":"The Happy Mondays are looking to tour their new album across Narth America in 2023 and are seeking support to help achieve their goal.","goal":"0","totalraised":"200","tourdates":1628522461000,"rewards":[{"first":"trhr","firstvalue":"$50","second":"rth","secondvalue":"$100","third":"rth","thirdvalue":"$200","fourth":"rthr","fifth":"rthrth","fifthvalue":""}]}]},{"id":"10354b73-b631-4da8-b7de-a57a820212c3","image":"http://localhost:8080/images/Joy_Division_promo_photo.jpeg","artistname":"Joy Division","campaigns":[{"id":"3216f3fd-5d68-4a2c-8e48-5ab57d792d63","campaignName":"Atmosphere tour","image":"http://localhost:8080/Joy_Division_promo_photo.jpeg","goal":"25,000","totalRaised":0,"description":"After creating waves in the UK recently, Joy division are now looking to tour across the US and Canada with your help!","tourdates":"October 1981","rewards":[{"firstReward":"free ticket when we come to your hometown","firstRewardValue":"$50","secondReward":"meet the band back stage","secondRewardValue":"$150","thirdReward":"Have a dedicated song written and performed in your home ","thirdRewardValue":"$500","fourthReward":"Somthing else","fourthRewardValue":"$1000","fifthReward":"free tickets for whole tour","fifthRewardValue":"$5000"}]}]},{"id":"b589eb9a-7822-4792-b304-be1005c25203","image":"http://localhost:8080/images/ab6761610000e5eb12e3f20d05a8d6cfde988715.jpeg","artistname":"Beyonce","campaigns":[{"id":"6783fbe3-d56a-4153-ba1b-f4ade9f18407","campaignName":"Renaissance tour","image":"http://localhost:8080/ab6761610000e5eb12e3f20d05a8d6cfde988715.jpeg","goal":"250,000","totalRaised":0,"description":"Beyonce is looking to tour across Canada and North America","tourdates":"Summer 2023","rewards":[{"firstReward":"free ticket when we come to your hometown","firstRewardValue":"$100","secondReward":"Signed T-shirt","secondRewardValue":"$200","thirdReward":"Meet her backstage ","thirdRewardValue":"$1000","fourthReward":"personal video message","fourthRewardValue":"$2000","fifthReward":"free tickets for whole tour","fifthRewardValue":"$5000"}]}]}]
+[
+  {
+    "id": "84e96018-4022-434e-80bf-000ce4cd12b8",
+    "firstname": "Shaun",
+    "lastname": "Ryder",
+    "artistname": "Happy Mondays",
+    "heroImage": "http://localhost:8080/images/happy-monday.jpeg",
+    "username": "happymondays",
+    "city": "Manchester",
+    "country": "England",
+    "campaigns": [
+      {
+        "id": "35bba08b-1b51-4153-ba7e-6da76b5ec1b9",
+        "title": "North American Tour 2023",
+        "description": "The Happy Mondays are looking to tour their new album across Narth America in 2023 and are seeking support to help achieve their goal.",
+        "goal": "3452162",
+        "totalRaised": 0,
+        "heroimage": "http://localhost:8080/images/happy-mondays_6083.jpeg",
+        "tourdates": 1628522461000,
+        "rewards": [
+          {
+            "first": "Personalised Video message",
+            "second": "Signed T-shirt",
+            "third": "Ticket for location of your choice"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "a4d46a86-ea66-4a29-8616-355b93288276",
+    "firstname": "John",
+    "lastname": "Lennon",
+    "artistname": "The Beatles",
+    "heroImage": "http://localhost:8080/images/284152.jpeg",
+    "username": "strawberryfieldsforever",
+    "city": "Liverpool",
+    "country": "England",
+    "campaigns": [
+      {
+        "id": "35bba08b-1b51-4153-ba7e-6da76b5ec1b9",
+        "title": "North American Tour 2023",
+        "description": "The Happy Mondays are looking to tour their new album across Narth America in 2023 and are seeking support to help achieve their goal.",
+        "goal": "0",
+        "totalraised": "200",
+        "tourdates": 1628522461000,
+        "rewards": [
+          {
+            "first": "trhr",
+            "firstvalue": "$50",
+            "second": "rth",
+            "secondvalue": "$100",
+            "third": "rth",
+            "thirdvalue": "$200",
+            "fourth": "rthr",
+            "fifth": "rthrth",
+            "fifthvalue": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "10354b73-b631-4da8-b7de-a57a820212c3",
+    "heroImage": "http://localhost:8080/images/Joy_Division_promo_photo.jpeg",
+    "artistname": "Joy Division",
+    "campaigns": [
+      {
+        "id": "3216f3fd-5d68-4a2c-8e48-5ab57d792d63",
+        "campaignName": "Atmosphere tour",
+        "heroImage": "http://localhost:8080/Joy_Division_promo_photo.jpeg",
+        "goal": "25,000",
+        "totalRaised": 0,
+        "description": "After creating waves in the UK recently, Joy division are now looking to tour across the US and Canada with your help!",
+        "tourdates": "October 1981",
+        "rewards": [
+          {
+            "firstReward": "free ticket when we come to your hometown",
+            "firstRewardValue": "$50",
+            "secondReward": "meet the band back stage",
+            "secondRewardValue": "$150",
+            "thirdReward": "Have a dedicated song written and performed in your home ",
+            "thirdRewardValue": "$500",
+            "fourthReward": "Somthing else",
+            "fourthRewardValue": "$1000",
+            "fifthReward": "free tickets for whole tour",
+            "fifthRewardValue": "$5000"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "b589eb9a-7822-4792-b304-be1005c25203",
+    "heroImage": "http://localhost:8080/images/ab6761610000e5eb12e3f20d05a8d6cfde988715.jpeg",
+    "artistname": "Beyonce",
+    "campaigns": [
+      {
+        "id": "6783fbe3-d56a-4153-ba1b-f4ade9f18407",
+        "campaignName": "Renaissance tour",
+        "heroImage": "http://localhost:8080/ab6761610000e5eb12e3f20d05a8d6cfde988715.jpeg",
+        "goal": "250,000",
+        "totalRaised": 0,
+        "description": "Beyonce is looking to tour across Canada and North America",
+        "tourdates": "Summer 2023",
+        "rewards": [
+          {
+            "firstReward": "free ticket when we come to your hometown",
+            "firstRewardValue": "$100",
+            "secondReward": "Signed T-shirt",
+            "secondRewardValue": "$200",
+            "thirdReward": "Meet her backstage ",
+            "thirdRewardValue": "$1000",
+            "fourthReward": "personal video message",
+            "fourthRewardValue": "$2000",
+            "fifthReward": "free tickets for whole tour",
+            "fifthRewardValue": "$5000"
+          }
+        ]
+      }
+    ]
+  }
+]
