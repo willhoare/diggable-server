@@ -6,12 +6,14 @@ const { v4: uuid } = require("uuid");
 
 const artists = require("../data/artist-details.json");
 
+//Get all Artists
 router.get("/", (req, res) => {
   const readArtists = fs.readFileSync("./data/artist-details.json");
   const artists = JSON.parse(readArtists);
   res.json(artists);
 });
 
+//Get individual Artist by id
 router.get("/:id", (req, res) => {
   getArists(req, res);
 });
@@ -35,37 +37,13 @@ function getArist() {
   return JSON.parse(artistData);
 }
 
-/// Setting up image upload
-// const path = require("path");
-
-// const multer = require("multer");
-// const { timeStamp } = require("console");
-
-// const storage = multer.diskStorage({
-//   destination: (req, file, cb) => {
-//     cb(null, "./public/images");
-//   },
-//   filename: (req, file, cb) => {
-//     console.log(file);
-//     cb(null, Date.now() + path.extname(file.originalname));
-//   },
-// });
-
-// const upload = multer({ storage: storage });
-
-// router.post("/", upload.single("testimage"), (req, res) => {
-//   console.log(req.file);
-
-//   res.send("image uploaded");
-// });
-
 //Setting form upload&json Parse
 
 router.post("/", (req, res) => {
   const newCampaignRead = fs.readFileSync("./data/artist-details.json");
   const campaigns = JSON.parse(newCampaignRead);
 
-  // adding new working upload form code
+  // Adding new working upload form code
 
   const {
     campaignName,
@@ -94,20 +72,15 @@ router.post("/", (req, res) => {
         id: uuid(),
         image: `http://localhost:8080/images/${image.name}`,
         artistname: artistname,
-
         campaigns: [
           {
             id: uuid(),
             campaignName: campaignName,
             image: `http://localhost:8080/${image.name}`,
-
             goal: goal,
             totalRaised: 0,
-
             description: description,
-
             tourdates: tourdates,
-
             rewards: [
               {
                 firstReward: firstReward,
@@ -134,69 +107,69 @@ router.post("/", (req, res) => {
   });
 });
 
-///// old req.body code
-//   const {
-//     firstname,
-//     lastname,
-//     artistname,
-//     username,
-//     city,
-//     country,
-//     title,
-//     description,
-//     goal,
-//     tourdates,
-//     profileimage,
-//     first,
-//     firstvalue,
-//     second,
-//     secondvalue,
-//     third,
-//     thirdvalue,
-//     fourth,
-//     fourthtvalue,
-//     fifth,
-//     fifthvalue,
-//   } = req.body;
-//   const newArtist = {
-//     id: uuid(),
-//     firstname: firstname,
-//     lastname: lastname,
-//     artistname: artistname,
-//     profileimage: "http://localhost:8080/images/284152.jpeg",
-//     username: username,
-//     city: city,
-//     country: country,
+router.put("/:id", (req, res) => {
+  const {
+    campaignName,
+    artistname,
+    goal,
+    description,
+    tourdates,
+    firstReward,
+    firstRewardValue,
+    secondReward,
+    secondRewardValue,
+    thirdReward,
+    thirdRewardValue,
+    fourthReward,
+    fourthRewardValue,
+    fifthReward,
+    fifthRewardValue,
+  } = req.body;
+  let image = req.files.image;
 
-//     campaigns: [
-//       {
-//         id: uuid(),
-//         title: title,
-//         description: description,
-//         goal: goal,
-//         totalRaised: 0,
-//         tourdates: tourdates,
-//         rewards: [
-//           {
-//             first: first,
-//             firstvalue: firstvalue,
-//             second: second,
-//             secondvalue: secondvalue,
-//             third: third,
-//             thirdvalue: thirdvalue,
-//             fourth: fourth,
-//             fourthvalue: fourthtvalue,
-//             fifth: fifth,
-//             fifthvalue: fifthvalue,
-//           },
-//         ],
-//       },
-//     ],
-//   };
+  image.mv("./public/images/" + image.name, (err) => {
+    if (err) {
+      return res.status(500).send(err);
+    } else {
+      const editedCampaign = {
+        id: uuid(),
+        image: `http://localhost:8080/images/${image.name}`,
+        artistname: artistname,
+        campaigns: [
+          {
+            id: uuid(),
+            campaignName: campaignName,
+            image: `http://localhost:8080/${image.name}`,
+            goal: goal,
+            totalRaised: 0,
+            description: description,
+            tourdates: tourdates,
+            rewards: [
+              {
+                firstReward: firstReward,
+                firstRewardValue: firstRewardValue,
+                secondReward: secondReward,
+                secondRewardValue: secondRewardValue,
+                thirdReward: thirdReward,
+                thirdRewardValue: thirdRewardValue,
+                fourthReward: fourthReward,
+                fourthRewardValue: fourthRewardValue,
+                fifthReward: fifthReward,
+                fifthRewardValue: fifthRewardValue,
+              },
+            ],
+          },
+        ],
+      };
 
-//   allArtists.push(newArtist);
-//   fs.writeFileSync("./data/artist-details.json", JSON.stringify(allArtists));
-//   res.status(201).send("New artist profile created");
-// });
+      // campaigns.push(newCampaign);
+
+      fs.writeFileSync("./data/artist-details.json", JSON.stringify(campaigns));
+      res.status(201).send("New campaign created");
+    }
+  });
+});
+
+// .catch((err) => res.status(400).send(`Error updating Campaign: ${err}`));
 
 module.exports = router;
