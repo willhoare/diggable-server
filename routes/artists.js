@@ -2,9 +2,13 @@ const express = require("express");
 const router = express.Router();
 const fs = require("fs");
 const { v4: uuid } = require("uuid");
-// const upload = multer({ storage: storage });
 
 const artists = require("../data/artist-details.json");
+
+function getArist() {
+  const artistData = fs.readFileSync("./data/artist-details.json");
+  return JSON.parse(artistData);
+}
 
 //Get all Artists
 router.get("/", (req, res) => {
@@ -32,12 +36,7 @@ async function getArists(req, res) {
   }
 }
 
-function getArist() {
-  const artistData = fs.readFileSync("./data/artist-details.json");
-  return JSON.parse(artistData);
-}
-
-//Setting form upload&json Parse
+//Setting form upload & JSON Parse
 
 router.post("/", (req, res) => {
   const newCampaignRead = fs.readFileSync("./data/artist-details.json");
@@ -108,6 +107,14 @@ router.post("/", (req, res) => {
 });
 
 router.put("/:id", (req, res) => {
+  // Finding artists
+  const findArtist = getArist();
+
+  // Filtering by specific artist id
+  const editArtist = findArtist.filter((artist) => artist.id !== req.params.id);
+  console.log(editArtist);
+
+  // Adding req body to update object
   const {
     campaignName,
     artistname,
@@ -125,50 +132,49 @@ router.put("/:id", (req, res) => {
     fifthReward,
     fifthRewardValue,
   } = req.body;
-  let image = req.files.image;
+  // let image = req.files.image;
 
-  image.mv("./public/images/" + image.name, (err) => {
-    if (err) {
-      return res.status(500).send(err);
-    } else {
-      const editedCampaign = {
+  // image.mv("./public/images/" + image.name, (err) => {
+  //   if (err) {
+  //     return res.status(500).send(err);
+  //   } else {
+  const editedCampaign = {
+    id: uuid(),
+    // image: `http://localhost:8080/images/${image.name}`,
+    artistname: artistname,
+    campaigns: [
+      {
         id: uuid(),
-        image: `http://localhost:8080/images/${image.name}`,
-        artistname: artistname,
-        campaigns: [
+        campaignName: campaignName,
+        // image: `http://localhost:8080/${image.name}`,
+        goal: goal,
+        totalRaised: 0,
+        description: description,
+        tourdates: tourdates,
+        rewards: [
           {
-            id: uuid(),
-            campaignName: campaignName,
-            image: `http://localhost:8080/${image.name}`,
-            goal: goal,
-            totalRaised: 0,
-            description: description,
-            tourdates: tourdates,
-            rewards: [
-              {
-                firstReward: firstReward,
-                firstRewardValue: firstRewardValue,
-                secondReward: secondReward,
-                secondRewardValue: secondRewardValue,
-                thirdReward: thirdReward,
-                thirdRewardValue: thirdRewardValue,
-                fourthReward: fourthReward,
-                fourthRewardValue: fourthRewardValue,
-                fifthReward: fifthReward,
-                fifthRewardValue: fifthRewardValue,
-              },
-            ],
+            firstReward: firstReward,
+            firstRewardValue: firstRewardValue,
+            secondReward: secondReward,
+            secondRewardValue: secondRewardValue,
+            thirdReward: thirdReward,
+            thirdRewardValue: thirdRewardValue,
+            fourthReward: fourthReward,
+            fourthRewardValue: fourthRewardValue,
+            fifthReward: fifthReward,
+            fifthRewardValue: fifthRewardValue,
           },
         ],
-      };
+      },
+    ],
+  };
 
-      // campaigns.push(newCampaign);
+  editArtist.push(editedCampaign);
 
-      fs.writeFileSync("./data/artist-details.json", JSON.stringify(campaigns));
-      res.status(201).send("New campaign created");
-    }
-  });
+  fs.writeFileSync("./data/artist-details.json", JSON.stringify(editArtist));
+  res.status(201).send("Campaign Succesfully edited");
 });
+// editArtist.push(editedCampaign)
 
 // .catch((err) => res.status(400).send(`Error updating Campaign: ${err}`));
 
