@@ -10,7 +10,7 @@
         "image": "http://localhost:8080/Joy_Division_promo_photo.jpeg",
         "goal": 25000,
         "totalRaised": 2000,
-        "description": "After creating waves in the UK recently, Joy division are now looking to tour across the US and Canada with your help!",
+        "description": "Joy Division are an English rock band formed in Salford in 1976. The group consisted of vocalist Ian Curtis, guitarist/keyboardist Bernard Sumner, bassist Peter Hook and drummer Stephen Morris. Sumner and Hook formed the band after attending a June 1976 Sex Pistols concert. While Joy Division's first recordings were heavily influenced by early punk, they soon developed a sparse, melancholy style that made them one of the pioneers of the post-punk movement. Their self-released 1978 debut EP An Ideal for Living drew the attention of the Manchester television personality Tony Wilson, who signed them to his independent label Factory Records. Their debut album Unknown Pleasures, recorded with producer Martin Hannett, was released in 1979. Frontman Curtis struggled with personal problems including a failing marriage, depression, and epilepsy. As the band's popularity grew, Curtis's health condition made it increasingly difficult for him to perform; he occasionally experienced seizures on stage. He died by suicide on the eve of what would have been the band's first North American tour in May 1980, aged 23. Joy Division's second and final album, Closer, was released two months later; it and the single 'Love Will Tear Us Apart' became their highest-charting releases. Between July and October 1980 the remaining members regrouped under the name New Order. They were successful throughout the next decade, blending post-punk with electronic and dance music influences.[5] In 2023, both Joy Division and New Order were nominated as one act for the Rock and Roll Hall of Fame.[6]",
         "tourdates": "October 1981",
         "rewards": [
           {
@@ -54,6 +54,36 @@
             "fourthRewardValue": "",
             "fifthReward": "",
             "fifthRewardValue": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "3dc4800e-a71b-4bc6-89b2-7c5784d3382a",
+    "image": "http://localhost:8080/images/rollinstones.jpeg",
+    "artistname": "Rolling stones",
+    "campaigns": [
+      {
+        "id": "15851690-5f88-4497-8ebc-1bef6e23f601",
+        "campaignName": "testing",
+        "image": "http://localhost:8080/rollinstones.jpeg",
+        "goal": "25000",
+        "totalRaised": 0,
+        "description": "touring across north america and canada",
+        "tourdates": "October 1981",
+        "rewards": [
+          {
+            "firstReward": "free ticket when we come to your hometown",
+            "firstRewardValue": "",
+            "secondReward": "meet the band back stage",
+            "secondRewardValue": "200",
+            "thirdReward": "Have a dedicated song written and performed in your home ",
+            "thirdRewardValue": "300",
+            "fourthReward": "personal video message",
+            "fourthRewardValue": "400",
+            "fifthReward": "free tickets for whole tour",
+            "fifthRewardValue": "500"
           }
         ]
       }

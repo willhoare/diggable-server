@@ -132,6 +132,9 @@ router.put("/:id", (req, res) => {
     fifthReward,
     fifthRewardValue,
   } = req.body;
+
+  console.log(req.body);
+
   // let image = req.files.image;
 
   // image.mv("./public/images/" + image.name, (err) => {
@@ -139,12 +142,12 @@ router.put("/:id", (req, res) => {
   //     return res.status(500).send(err);
   //   } else {
   const editedCampaign = {
-    id: uuid(),
+    id: req.params.id,
     // image: `http://localhost:8080/images/${image.name}`,
     artistname: artistname,
     campaigns: [
       {
-        id: uuid(),
+        id: req.params.id,
         campaignName: campaignName,
         // image: `http://localhost:8080/${image.name}`,
         goal: goal,

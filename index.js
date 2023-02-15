@@ -9,6 +9,7 @@ const jwt = require("jsonwebtoken");
 const fileupload = require("express-fileupload");
 const bodyParser = require("body-parser");
 const path = require("path");
+require("dotenv").config();
 
 app.use(cors());
 app.use(express.json());
