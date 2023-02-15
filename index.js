@@ -9,17 +9,50 @@ const jwt = require("jsonwebtoken");
 const fileupload = require("express-fileupload");
 const bodyParser = require("body-parser");
 const path = require("path");
+const e = require("express");
 require("dotenv").config();
-
 app.use(cors());
 app.use(express.json());
 app.use(fileupload());
+const stripe = require("stripe")(process.env.STRIPE_PRIVATE_KEY);
 
 app.listen(8080, () => {
   console.log("Server is running");
 });
 
 app.use(express.static(path.join(__dirname, "public")));
+
+const rewards = new Map([
+  [1, { priceInCents: 5000, name: "First Reward" }],
+  [2, { priceInCents: 10000, name: "Second Reward" }],
+]);
+
+app.post("/create-checkout-session", async (req, res) => {
+  try {
+    const session = await stripe.checkout.sessions.create({
+      payment_method_types: ["card"],
+      mode: "payment",
+      line_items: req.body.items.map((item) => {
+        const reward = rewards.get(item.id);
+        return {
+          price_data: {
+            currency: "cad",
+            product_data: {
+              name: reward.name,
+            },
+            unit_amount: reward.priceInCents,
+          },
+          quantity: item.quantity,
+        };
+      }),
+      success_url: `http://localhost:3000/successfulpayment`,
+      cancel_url: `${process.env.SERVER_URL}/cancel.html`,
+    });
+    res.json({ url: session.url });
+  } catch (e) {
+    res.status(500).json({ error: e.message });
+  }
+});
 
 app.use("/artists", allArtists);
 app.use("/campaigns", allCampaigns);
