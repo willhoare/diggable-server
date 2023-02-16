@@ -1,0 +1,362 @@
+[
+  {
+    "id": "10354b73-b631-4da8-b7de-a57a820212c3",
+    "image": "http://localhost:8080/images/Joy_Division_promo_photo.jpeg",
+    "artistname": "Joy Division",
+    "campaigns": [
+      {
+        "id": "3216f3fd-5d68-4a2c-8e48-5ab57d792d63",
+        "campaignName": "Atmosphere tour",
+        "image": "http://localhost:8080/Joy_Division_promo_photo.jpeg",
+        "goal": 25000,
+        "totalRaised": 2000,
+        "description": "Joy Division are an English rock band formed in Salford in 1976. The group consisted of vocalist Ian Curtis, guitarist/keyboardist Bernard Sumner, bassist Peter Hook and drummer Stephen Morris. Sumner and Hook formed the band after attending a June 1976 Sex Pistols concert. While Joy Division's first recordings were heavily influenced by early punk, they soon developed a sparse, melancholy style that made them one of the pioneers of the post-punk movement. Their self-released 1978 debut EP An Ideal for Living drew the attention of the Manchester television personality Tony Wilson, who signed them to his independent label Factory Records. Their debut album Unknown Pleasures, recorded with producer Martin Hannett, was released in 1979. Frontman Curtis struggled with personal problems including a failing marriage, depression, and epilepsy. As the band's popularity grew, Curtis's health condition made it increasingly difficult for him to perform; he occasionally experienced seizures on stage. He died by suicide on the eve of what would have been the band's first North American tour in May 1980, aged 23. Joy Division's second and final album, Closer, was released two months later; it and the single 'Love Will Tear Us Apart' became their highest-charting releases. Between July and October 1980 the remaining members regrouped under the name New Order. They were successful throughout the next decade, blending post-punk with electronic and dance music influences.[5] In 2023, both Joy Division and New Order were nominated as one act for the Rock and Roll Hall of Fame.[6]",
+        "tourdates": "October 1981",
+        "rewards": [
+          {
+            "firstReward": "free ticket when we come to your hometown",
+            "firstRewardValue": "$50",
+            "secondReward": "meet the band back stage",
+            "secondRewardValue": "$150",
+            "thirdReward": "Have a dedicated song written and performed in your home ",
+            "thirdRewardValue": "$500",
+            "fourthReward": "Somthing else",
+            "fourthRewardValue": "$1000",
+            "fifthReward": "free tickets for whole tour",
+            "fifthRewardValue": "$5000"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "f9083358-9a74-413a-a67a-47096c6d9e4c",
+    "image": "http://localhost:8080/images/284152.jpeg",
+    "artistname": "The Beatles",
+    "campaigns": [
+      {
+        "id": "112cf20d-ca27-45ee-9516-e3b9f76570be",
+        "campaignName": "Magical Mystery Tour",
+        "image": "http://localhost:8080/284152.jpeg",
+        "goal": "2500",
+        "totalRaised": 0,
+        "description": "Touring throughout north america in 2023",
+        "tourdates": "October",
+        "rewards": [
+          {
+            "firstReward": "",
+            "firstRewardValue": "",
+            "secondReward": "",
+            "secondRewardValue": "",
+            "thirdReward": "",
+            "thirdRewardValue": "",
+            "fourthReward": "",
+            "fourthRewardValue": "",
+            "fifthReward": "",
+            "fifthRewardValue": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "000687da-94ea-465b-9acd-12fee95f2aae",
+    "image": "http://localhost:8080/images/ittle-simz-11.jpeg",
+    "artistname": "Little Simz",
+    "campaigns": [
+      {
+        "id": "e4d1bb23-09ec-48b7-a0b1-e4fe6d7bfb0c",
+        "campaignName": "Little Simz Takes America",
+        "image": "http://localhost:8080/ittle-simz-11.jpeg",
+        "goal": "7000",
+        "totalRaised": 4060,
+        "description": "Authoritative and lyrical rapper and actor Little Simz has become one of the most notable voices in hip-hop since her debut at the top of the 2010s. Independent recordings such as Blank Canvas (2013) and E.D.G.E. (2014) led to a Worldwide Awards nod, the first major accolade for the British-Ghanaian artist. A Curious Tale of Trials + Persons (2015) and Stillness in Wonderland (2016), her vividly imaginative first two albums, increased her momentum before she joined producer Inflo for Grey Area (2019) and Sometimes I Might Be Introvert (2021). Both of these full-lengths topped the U.K. R&B chart, with the former winning an Ivor Novello award, and the latter the Mercury Prize. Working quickly, Simz returned at the end of 2019 with the confident and hard-edged No Thank You. Simz is now excited to be taking her latest album on tour across North America!",
+        "tourdates": "Summer 2023",
+        "rewards": [
+          {
+            "firstReward": "Free Ticket for your hometown",
+            "firstRewardValue": "50",
+            "secondReward": "Ticket to your hometown and a personalised Thank you message",
+            "secondRewardValue": "100",
+            "thirdReward": "Ticket to your hometown and a personalised Thank you message, and a signed T-shirt",
+            "thirdRewardValue": "150",
+            "fourthReward": "Meet Simz backstage at the location of your choice",
+            "fourthRewardValue": "250",
+            "fifthReward": "All of the above!",
+            "fifthRewardValue": "500"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "5a2ced51-e295-4349-9cea-d0b65677777d",
+    "image": "http://localhost:8080/images/Alvvays.jpeg",
+    "artistname": "Alvvays",
+    "campaigns": [
+      {
+        "id": "ac6ef826-bbf4-414d-b37a-364fb4a2ccf7",
+        "campaignName": "Canaidan Your 2024",
+        "image": "http://localhost:8080/Alvvays.jpeg",
+        "goal": "4000",
+        "totalRaised": 0,
+        "description": "Toronto-based Alvvays' combination of jangly indie pop with infectious, sugary melodies and melancholy noise rock earned the band a devoted following and led to them being one of the flagbears of the ongoing popularity of the C86 sound. They first made a splash with the awkardly pretty single \"Archie, Marry Me,\" which featured on their assured self titled debut from 2014. Future albums retained the building blocks of their early sound, with 2022s Blue Rev adding in elements of '90s indie rock and shoegaze.",
+        "tourdates": "Early 2024",
+        "rewards": [
+          {
+            "firstReward": "FREE TICKET FOR YOUR HOMETOWN",
+            "firstRewardValue": "50",
+            "secondReward": "TICKET TO YOUR HOMETOWN AND A PERSONALISED THANK YOU MESSAGE",
+            "secondRewardValue": "100",
+            "thirdReward": "TICKET TO YOUR HOMETOWN AND A PERSONALISED THANK YOU MESSAGE, AND A SIGNED T-SHIRT",
+            "thirdRewardValue": "150",
+            "fourthReward": "MEET SIMZ BACKSTAGE AT THE LOCATION OF YOUR CHOICE",
+            "fourthRewardValue": "250",
+            "fifthReward": "ALL OF THE ABOVE!",
+            "fifthRewardValue": "500"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "a6a2afd5-8c63-408c-8a1e-ef28b4184130",
+    "image": "http://localhost:8080/images/yardact.jpeg",
+    "artistname": "Yard Act",
+    "campaigns": [
+      {
+        "id": "9b3dd7db-4b65-447b-a275-63778ca6c7e0",
+        "campaignName": "Winter 2023 Yardies Tour",
+        "image": "http://localhost:8080/yardact.jpeg",
+        "goal": "7000",
+        "totalRaised": 0,
+        "description": "Yard Act are a minimalist rock group based in Leeds, UK. The band currently consists of James Smith (vocals), Sam Shjipstone (guitar), Ryan Needham (bass), and Jay Russell (drums).  Formed in 2019, Yard Act began life when friends Ryan Needham and James Smith started creating minimalist rock tracks using a primitive drum machine and borrowed bass guitar. Later drafting in George Townend on drums, and Sammy Robinson on guitars whom they met at their spiritual home, The Brudenell Social Club, they played a handful of shows to a rapt reception before you-know-what intervened. No matter: ingenuity and artistry enabled them to great their debut release. Overflowing with satirical one-liners, A side ‘Fixer Upper’ follows a cocksure fictional character, ‘Graeme’, planning some home renovations.",
+        "tourdates": "Winter 2023",
+        "rewards": [
+          {
+            "firstReward": "FREE TICKET FOR YOUR HOMETOWN",
+            "firstRewardValue": "50",
+            "secondReward": "TICKET TO YOUR HOMETOWN AND A PERSONALISED THANK YOU MESSAGE",
+            "secondRewardValue": "100",
+            "thirdReward": "TICKET TO YOUR HOMETOWN AND A PERSONALISED THANK YOU MESSAGE, AND A SIGNED T-SHIRT",
+            "thirdRewardValue": "150",
+            "fourthReward": "MEET THE BAND BACKSTAGE AT THE LOCATION OF YOUR CHOICE",
+            "fourthRewardValue": "200",
+            "fifthReward": "ALL OF THE ABOVE!",
+            "fifthRewardValue": "250"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "798d8942-d6d9-478a-9418-a009f2e2c358",
+    "image": "http://localhost:8080/images/arlo.jpeg",
+    "artistname": "Arlo Parks",
+    "campaigns": [
+      {
+        "id": "ed6f7255-6dec-4ae5-9b60-93241a3f5b29",
+        "campaignName": "Lost in Sunbeams Summer Tour",
+        "image": "http://localhost:8080/arlo.jpeg",
+        "goal": "4000",
+        "totalRaised": 0,
+        "description": "London-born singer/songwriter and poet Arlo Parks pens vividly descriptive lyrics about adolescence and mental health awareness, accompanied by an enticing mixture of bedroom pop and indie soul. She first received attention for several early singles and two 2019 EPs, which gained BBC Radio 1 airplay and praise from publications such as NME. Her 2021 full-length debut, Collapsed in Sunbeams, reached number three on the U.K. album chart and was met with widespread acclaim, winning Parks the Brit Award for Best New Artist and the 2021 Mercury Prize",
+        "tourdates": "Summer 2024",
+        "rewards": [
+          {
+            "firstReward": "FREE TICKET FOR YOUR HOMETOWN",
+            "firstRewardValue": "50",
+            "secondReward": "TICKET TO YOUR HOMETOWN AND A PERSONALISED THANK YOU MESSAGE",
+            "secondRewardValue": "100",
+            "thirdReward": "TICKET TO YOUR HOMETOWN AND A PERSONALISED THANK YOU MESSAGE, AND A SIGNED T-SHIRT",
+            "thirdRewardValue": "150",
+            "fourthReward": "MEET SIMZ BACKSTAGE AT THE LOCATION OF YOUR CHOICE",
+            "fourthRewardValue": "200",
+            "fifthReward": "ALL OF THE ABOVE!",
+            "fifthRewardValue": "250"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "1983fe69-3794-4e44-b814-ed5193bea65e",
+    "image": "http://localhost:8080/images/ezra.jpeg",
+    "artistname": "Ezra Collective",
+    "campaigns": [
+      {
+        "id": "c8e39c03-bcc7-44ba-b370-41b44814fe71",
+        "campaignName": "Ezra Collective European Tour",
+        "image": "http://localhost:8080/ezra.jpeg",
+        "goal": "8000",
+        "totalRaised": 5000,
+        "description": "Ezra Collective is a British jazz quintet composed of drummer and bandleader Femi Koleoso, bassist TJ Koleoso, keyboardist Joe Armon-Jones, trumpeter Ife Ogunjobi, and tenor saxophonist James Mollison.[1] The group fuses elements of afro-beat, hip-hop and soul,[2] and frequently collaborates with fellow London-based jazz musicians such as Nubya Garcia and Moses Boyd. The members of Ezra met at the jazz programme Tomorrow's Warriors, run by Gary Crosby.[3]",
+        "tourdates": "Summer 2023",
+        "rewards": [
+          {
+            "firstReward": "Free ticket when we visit your hometown",
+            "firstRewardValue": "50",
+            "secondReward": "Meet the band backstage",
+            "secondRewardValue": "100",
+            "thirdReward": "TICKET TO YOUR HOMETOWN AND A PERSONALISED THANK YOU MESSAGE, AND A SIGNED T-SHIRT",
+            "thirdRewardValue": "150",
+            "fourthReward": "Meet the band backstage at the location",
+            "fourthRewardValue": "200",
+            "fifthReward": "All of the above",
+            "fifthRewardValue": "250"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "aa0a3c9d-e379-46f6-8f7e-33a4db6a1638",
+    "image": "http://localhost:8080/images/libertines.webp",
+    "artistname": "The Libertines",
+    "campaigns": [
+      {
+        "id": "141b200f-201b-4528-843f-120791ba43c9",
+        "campaignName": "Up the bracket tour",
+        "image": "http://localhost:8080/libertines.webp",
+        "goal": "10000",
+        "totalRaised": 0,
+        "description": "The Libertines joined the pop fray of 2002, competing with the likes of the Strokes, Hives, Vines, and Doves with their debut single, \"What a Waster.\" The Bernard Butler-produced track entered the U.K.'s Top 40 in June, leaving NME to crown the Libertines as the best new band in Britain. The double-A-side song \"I Get Along\" earned Single of the Week on BBC Radio 1. The London-based band, who inked a deal with Rough Trade in December 2001, featured Carl Barât (guitar/vocals), Pete Doherty (guitar/vocals), John Hassall (bass), and Gary Powell (drums). Up the Bracket was released stateside in March 2003 while the single Time for Heroes gained momentum on the U.K. charts.",
+        "tourdates": "Summer 2023",
+        "rewards": [
+          {
+            "firstReward": "Free ticket when we visit your hometown",
+            "firstRewardValue": "50",
+            "secondReward": "Meet the band backstage",
+            "secondRewardValue": "100",
+            "thirdReward": "TICKET TO YOUR HOMETOWN AND A PERSONALISED THANK YOU MESSAGE, AND A SIGNED T-SHIRT",
+            "thirdRewardValue": "150",
+            "fourthReward": "Meet the band backstage at the location",
+            "fourthRewardValue": "200",
+            "fifthReward": "All of the above",
+            "fifthRewardValue": "250"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cedabacd-e3f5-40b4-9eb7-e30bac0948de",
+    "image": "http://localhost:8080/images/Screen Shot 2023-02-15 at 1.40.30 PM.png",
+    "artistname": "The Brokes",
+    "campaigns": [
+      {
+        "id": "e681bfbc-4adc-49cf-a4cd-e03c905319eb",
+        "campaignName": "Strokes Tribute",
+        "image": "http://localhost:8080/Screen Shot 2023-02-15 at 1.40.30 PM.png",
+        "goal": "3000",
+        "totalRaised": 0,
+        "description": "Canada’s only genuine, artificial Strokes tribute band featuring members of Marlon Chaplin, Suitcase Sam, TV Dog and Wavy Green.  Performing material from across The Strokes catalogue, this talented group of Toronto musicians faithfully recreates The Strokes sound note for note.  Guaranteed to get the audience on their feet and singing along, The Brokes are the next best thing to seeing the real thing.",
+        "tourdates": "",
+        "rewards": [
+          {
+            "firstReward": "Free ticket when we visit your hometown",
+            "firstRewardValue": "50",
+            "secondReward": "Meet the band backstage",
+            "secondRewardValue": "100",
+            "thirdReward": "TICKET TO YOUR HOMETOWN AND A PERSONALISED THANK YOU MESSAGE, AND A SIGNED T-SHIRT",
+            "thirdRewardValue": "150",
+            "fourthReward": "Meet the band backstage at the location",
+            "fourthRewardValue": "200",
+            "fifthReward": "All of the above",
+            "fifthRewardValue": "250"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "fab3f8b7-343d-4e13-a40a-65ec7517b862",
+    "image": "http://localhost:8080/images/akintoye.png",
+    "artistname": "Akintoye",
+    "campaigns": [
+      {
+        "id": "dc263f2e-e25a-4614-81b6-3811c6c99e81",
+        "campaignName": "US Tour",
+        "image": "http://localhost:8080/akintoye.png",
+        "goal": "5000",
+        "totalRaised": 2500,
+        "description": "The third album from up-and-coming Toronto rapper Akintoye provides a wide variety of songs that rap fans and non-rap fans alike can enjoy.  Released Sept. 2, Anxiety and Circumstance is the third album from Toronto rapper Akintoye. Akintoye has been garnering attention since April 2020 when one of his freestyle raps went viral on TikTok. He now has 2.5 million followers on TikTok and over 475,000 monthly listeners on Spotify.  Anxiety and Circumstance maintains the bombastic, in-your-face energy that Akintoye employs in his social media posts. You can practically hear the grin on his face during the upbeat songs. Despite the album title, each line is delivered with a feeling of righteous confidence, daring listeners not to jam with him. ",
+        "tourdates": "",
+        "rewards": [
+          {
+            "firstReward": "Free ticket when we visit your hometown",
+            "firstRewardValue": "50",
+            "secondReward": "Meet the band backstage",
+            "secondRewardValue": "100",
+            "thirdReward": "TICKET TO YOUR HOMETOWN AND A PERSONALISED THANK YOU MESSAGE, AND A SIGNED T-SHIRT",
+            "thirdRewardValue": "150",
+            "fourthReward": "Meet the band backstage at the location",
+            "fourthRewardValue": "200",
+            "fifthReward": "All of the above",
+            "fifthRewardValue": "250"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cb78d5a7-38ff-40b6-b995-14ca8b4d0dbb",
+    "image": "http://localhost:8080/images/jamiet.jpeg",
+    "artistname": "Jamie T and his Band",
+    "campaigns": [
+      {
+        "id": "352f8ce3-0742-4759-acfd-f4ad9c553f1a",
+        "campaignName": "Jamie Ts North American Tour 2023",
+        "image": "http://localhost:8080/jamiet.jpeg",
+        "goal": "5000",
+        "totalRaised": 0,
+        "description": "With his appealingly laid-back hip-hop vocal phrasing and an eclectic bedroom D.I.Y. musical palette, Jamie T. comes across like the love child of the Streets' Mike Skinner and Badly Drawn Boy's Damon Gough. His clever pop sense is his own, however, and keeps the South Londoner from sounding like a mashup of his influences, which range from vintage Jamaican ska to the Beastie Boys by way of Tina Turner and the Clash. Debuting in the early 2000s, he released his platinum-certified debut, Panic Prevention, in 2007. He continued with three additional Top Four U.K. efforts into the 2020s. After a six-year gap, he released his fifth set in 2022, The Theory of Whatever.",
+        "tourdates": "Summer 2023",
+        "rewards": [
+          {
+            "firstReward": "Free ticket when we visit your hometown",
+            "firstRewardValue": "50",
+            "secondReward": "Meet the band backstage",
+            "secondRewardValue": "100",
+            "thirdReward": "TICKET TO YOUR HOMETOWN AND A PERSONALISED THANK YOU MESSAGE, AND A SIGNED T-SHIRT",
+            "thirdRewardValue": "150",
+            "fourthReward": "Meet the band backstage at the location",
+            "fourthRewardValue": "200",
+            "fifthReward": "All of the above",
+            "fifthRewardValue": "500"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2901fa9e-01c5-481b-bbb3-140189f69059",
+    "image": "http://localhost:8080/images/rollinstones.jpeg",
+    "artistname": "Will and his band",
+    "campaigns": [
+      {
+        "id": "fc3ac500-2bd9-4fe2-8377-f8230bba051a",
+        "campaignName": "Wills tour",
+        "image": "http://localhost:8080/rollinstones.jpeg",
+        "goal": "499996",
+        "totalRaised": 0,
+        "description": "We're tour across america!",
+        "tourdates": "October 1981",
+        "rewards": [
+          {
+            "firstReward": "free ticket when we come to your hometown",
+            "firstRewardValue": "50",
+            "secondReward": "meet the band back stage",
+            "secondRewardValue": "1000",
+            "thirdReward": "Have a dedicated song written and performed in your home ",
+            "thirdRewardValue": "200",
+            "fourthReward": "",
+            "fourthRewardValue": "",
+            "fifthReward": "",
+            "fifthRewardValue": ""
+          }
+        ]
+      }
+    ]
+  }
+]
