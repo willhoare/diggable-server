@@ -66,15 +66,11 @@ app.use((req, res, next) => {
   if (req.url === "/signup" || req.url === "/login") {
     next();
   } else {
-    // Format of request is BEARER <token>. Splitting on ' ' will create an
-    // array where the token is at index 1
     const token = getToken(req);
 
     if (token) {
       console.log("Auth Token:", token);
       if (jwt.verify(token, jsonSecretKey)) {
-        // Decode the token to pass along to end-points that may need
-        // access to data stored in the token.
         req.decode = jwt.decode(token);
         next();
       } else {

@@ -328,35 +328,5 @@
         ]
       }
     ]
-  },
-  {
-    "id": "2901fa9e-01c5-481b-bbb3-140189f69059",
-    "image": "http://localhost:8080/images/rollinstones.jpeg",
-    "artistname": "Will and his band",
-    "campaigns": [
-      {
-        "id": "fc3ac500-2bd9-4fe2-8377-f8230bba051a",
-        "campaignName": "Wills tour",
-        "image": "http://localhost:8080/rollinstones.jpeg",
-        "goal": "499996",
-        "totalRaised": 0,
-        "description": "We're tour across america!",
-        "tourdates": "October 1981",
-        "rewards": [
-          {
-            "firstReward": "free ticket when we come to your hometown",
-            "firstRewardValue": "50",
-            "secondReward": "meet the band back stage",
-            "secondRewardValue": "1000",
-            "thirdReward": "Have a dedicated song written and performed in your home ",
-            "thirdRewardValue": "200",
-            "fourthReward": "",
-            "fourthRewardValue": "",
-            "fifthReward": "",
-            "fifthRewardValue": ""
-          }
-        ]
-      }
-    ]
   }
 ]
