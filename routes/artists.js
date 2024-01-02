@@ -135,12 +135,6 @@ router.put("/:id", (req, res) => {
 
   console.log(req.body);
 
-  // let image = req.files.image;
-
-  // image.mv("./public/images/" + image.name, (err) => {
-  //   if (err) {
-  //     return res.status(500).send(err);
-  //   } else {
   const editedCampaign = {
     id: req.params.id,
     // image: `http://localhost:8080/images/${image.name}`,
@@ -177,8 +171,5 @@ router.put("/:id", (req, res) => {
   fs.writeFileSync("./data/artist-details.json", JSON.stringify(editArtist));
   res.status(201).send("Campaign Succesfully edited");
 });
-// editArtist.push(editedCampaign)
-
-// .catch((err) => res.status(400).send(`Error updating Campaign: ${err}`));
 
 module.exports = router;
