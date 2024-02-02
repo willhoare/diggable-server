@@ -11,7 +11,7 @@ const dbConfig = {
 const migrateData = async () => {
   const connection = await mysql.createConnection(dbConfig);
   const data = JSON.parse(
-    await fs.readFile("path/to/your/json_file.json", "utf8")
+    await fs.readFile("./data/artist-details.json", "utf8")
   );
 
   for (const artist of data) {
@@ -61,4 +61,3 @@ const migrateData = async () => {
 };
 
 migrateData().catch((err) => console.error("Migration error:", err));
-node migrateData.js
