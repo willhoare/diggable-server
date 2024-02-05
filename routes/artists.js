@@ -1,49 +1,10 @@
 const express = require("express");
-const multer = require("multer");
+const app = express();
+app.use(express.json()); // This line is crucial
+
 const router = express.Router();
 const { v4: uuid } = require("uuid");
 const pool = require("../dbPool");
-
-// Set up storage engine
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, "./public/uploads/"); // Ensure this directory exists
-  },
-  filename: function (req, file, cb) {
-    const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
-    cb(
-      null,
-      file.fieldname +
-        "-" +
-        uniqueSuffix +
-        "." +
-        file.originalname.split(".").pop()
-    );
-  },
-});
-
-const upload = multer({ storage: storage });
-
-// Adjust your POST route to handle multipart/form-data
-router.post("/", upload.single("image"), async (req, res) => {
-  try {
-    const { artistname } = req.body; // Other form fields are accessible as req.body
-    const newId = uuid();
-    const imagePath = req.file ? `/uploads/${req.file.filename}` : null; // Construct the path for the stored image
-
-    await pool.query(
-      "INSERT INTO artists (id, artistname, image) VALUES (?, ?, ?)",
-      [newId, artistname, imagePath] // Use imagePath to store the image path in the database
-    );
-
-    res
-      .status(201)
-      .send({ message: "New artist created", id: newId, imagePath: imagePath });
-  } catch (err) {
-    console.error("Failed to create artist:", err);
-    res.status(500).send("Internal Server Error");
-  }
-});
 
 // Enable CORS to allow requests from any origin
 router.use((req, res, next) => {
@@ -111,17 +72,37 @@ router.get("/:id", async (req, res) => {
 
 // Add a new artist - No authentication required
 router.post("/", async (req, res) => {
+  const connection = await pool.getConnection();
   try {
-    const { artistname, image } = req.body;
-    const newId = uuid();
-    await pool.query(
+    await connection.beginTransaction();
+    const { artistname, image, campaigns } = req.body;
+    const artistId = uuid();
+
+    await connection.query(
       "INSERT INTO artists (id, artistname, image) VALUES (?, ?, ?)",
-      [newId, artistname, image]
+      [artistId, artistname, image]
     );
-    res.status(201).send({ message: "New artist created", id: newId });
+
+    // Check if campaigns is actually an array
+    if (Array.isArray(campaigns) && campaigns.length > 0) {
+      for (const campaign of campaigns) {
+        // Existing logic to process each campaign and its rewards...
+      }
+    } else {
+      throw new TypeError("Expected 'campaigns' to be an array");
+    }
+
+    await connection.commit();
+    res.status(201).send({
+      message: "Artist, campaigns, and rewards created successfully",
+      id: artistId,
+    });
   } catch (err) {
-    console.error("Failed to create artist:", err);
-    res.status(500).send("Internal Server Error");
+    await connection.rollback();
+    console.error("Transaction failed:", err);
+    res.status(500).send("Failed to create artist, campaigns, and rewards");
+  } finally {
+    connection.release();
   }
 });
 
