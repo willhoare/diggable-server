@@ -1,175 +1,143 @@
 const express = require("express");
+const multer = require("multer");
 const router = express.Router();
-const fs = require("fs");
 const { v4: uuid } = require("uuid");
+const pool = require("../dbPool");
 
-const artists = require("../data/artist-details.json");
-
-function getArist() {
-  const artistData = fs.readFileSync("./data/artist-details.json");
-  return JSON.parse(artistData);
-}
-
-//Get all Artists
-router.get("/", (req, res) => {
-  const readArtists = fs.readFileSync("./data/artist-details.json");
-  const artists = JSON.parse(readArtists);
-  res.json(artists);
+// Set up storage engine
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "./public/uploads/"); // Ensure this directory exists
+  },
+  filename: function (req, file, cb) {
+    const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
+    cb(
+      null,
+      file.fieldname +
+        "-" +
+        uniqueSuffix +
+        "." +
+        file.originalname.split(".").pop()
+    );
+  },
 });
 
-//Get individual Artist by id
-router.get("/:id", (req, res) => {
-  getArists(req, res);
-});
+const upload = multer({ storage: storage });
 
-async function getArists(req, res) {
-  const artistsDetails = getArist();
-  const artistDetails = artistsDetails.find(
-    (artistDetails) => artistDetails.id === req.params.id
-  );
-  if (artistDetails) {
-    try {
-      res.json(artistDetails);
-    } catch {
-      console.log("error");
-    }
+// Adjust your POST route to handle multipart/form-data
+router.post("/", upload.single("image"), async (req, res) => {
+  try {
+    const { artistname } = req.body; // Other form fields are accessible as req.body
+    const newId = uuid();
+    const imagePath = req.file ? `/uploads/${req.file.filename}` : null; // Construct the path for the stored image
+
+    await pool.query(
+      "INSERT INTO artists (id, artistname, image) VALUES (?, ?, ?)",
+      [newId, artistname, imagePath] // Use imagePath to store the image path in the database
+    );
+
+    res
+      .status(201)
+      .send({ message: "New artist created", id: newId, imagePath: imagePath });
+  } catch (err) {
+    console.error("Failed to create artist:", err);
+    res.status(500).send("Internal Server Error");
   }
-}
-
-//Setting form upload & JSON Parse
-
-router.post("/", (req, res) => {
-  const newCampaignRead = fs.readFileSync("./data/artist-details.json");
-  const campaigns = JSON.parse(newCampaignRead);
-
-  // Adding new working upload form code
-
-  const {
-    campaignName,
-    artistname,
-    goal,
-    description,
-    tourdates,
-    firstReward,
-    firstRewardValue,
-    secondReward,
-    secondRewardValue,
-    thirdReward,
-    thirdRewardValue,
-    fourthReward,
-    fourthRewardValue,
-    fifthReward,
-    fifthRewardValue,
-  } = req.body;
-  let image = req.files.image;
-
-  image.mv("./public/images/" + image.name, (err) => {
-    if (err) {
-      return res.status(500).send(err);
-    } else {
-      const newCampaign = {
-        id: uuid(),
-        image: `http://localhost:8080/images/${image.name}`,
-        artistname: artistname,
-        campaigns: [
-          {
-            id: uuid(),
-            campaignName: campaignName,
-            image: `http://localhost:8080/${image.name}`,
-            goal: goal,
-            totalRaised: 0,
-            description: description,
-            tourdates: tourdates,
-            rewards: [
-              {
-                firstReward: firstReward,
-                firstRewardValue: firstRewardValue,
-                secondReward: secondReward,
-                secondRewardValue: secondRewardValue,
-                thirdReward: thirdReward,
-                thirdRewardValue: thirdRewardValue,
-                fourthReward: fourthReward,
-                fourthRewardValue: fourthRewardValue,
-                fifthReward: fifthReward,
-                fifthRewardValue: fifthRewardValue,
-              },
-            ],
-          },
-        ],
-      };
-
-      campaigns.push(newCampaign);
-
-      fs.writeFileSync("./data/artist-details.json", JSON.stringify(campaigns));
-      res.status(201).send("New campaign created");
-    }
-  });
 });
 
-router.put("/:id", (req, res) => {
-  // Finding artists
-  const findArtist = getArist();
+// Enable CORS to allow requests from any origin
+router.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
 
-  // Filtering by specific artist id
-  const editArtist = findArtist.filter((artist) => artist.id !== req.params.id);
-  console.log(editArtist);
+// Get all Artists with Campaigns - Publicly accessible
+router.get("/", async (req, res) => {
+  try {
+    const [artistRows] = await pool.query("SELECT * FROM artists");
+    const artistsWithCampaigns = await Promise.all(
+      artistRows.map(async (artist) => {
+        const [campaignRows] = await pool.query(
+          "SELECT * FROM campaigns WHERE artist_id = ?",
+          [artist.id]
+        );
+        return { ...artist, campaigns: campaignRows };
+      })
+    );
+    res.json(artistsWithCampaigns);
+  } catch (err) {
+    console.error("Failed to fetch artists with campaigns:", err);
+    res.status(500).send("Internal Server Error");
+  }
+});
 
-  // Adding req body to update object
-  const {
-    campaignName,
-    artistname,
-    goal,
-    description,
-    tourdates,
-    firstReward,
-    firstRewardValue,
-    secondReward,
-    secondRewardValue,
-    thirdReward,
-    thirdRewardValue,
-    fourthReward,
-    fourthRewardValue,
-    fifthReward,
-    fifthRewardValue,
-  } = req.body;
+// Get an artist by ID along with their campaigns
+router.get("/:id", async (req, res) => {
+  const artistId = req.params.id;
+  try {
+    // Fetch artist data
+    const [artistDataRows] = await pool.query(
+      "SELECT * FROM artists WHERE id = ?",
+      [artistId]
+    );
 
-  console.log(req.body);
+    if (artistDataRows.length === 0) {
+      // If no artist data is found, send a 404 response or appropriate error message
+      res.status(404).json({ error: "Artist not found" });
+    } else {
+      const artist = artistDataRows[0];
 
-  const editedCampaign = {
-    id: req.params.id,
-    // image: `http://localhost:8080/images/${image.name}`,
-    artistname: artistname,
-    campaigns: [
-      {
-        id: req.params.id,
-        campaignName: campaignName,
-        // image: `http://localhost:8080/${image.name}`,
-        goal: goal,
-        totalRaised: 0,
-        description: description,
-        tourdates: tourdates,
-        rewards: [
-          {
-            firstReward: firstReward,
-            firstRewardValue: firstRewardValue,
-            secondReward: secondReward,
-            secondRewardValue: secondRewardValue,
-            thirdReward: thirdReward,
-            thirdRewardValue: thirdRewardValue,
-            fourthReward: fourthReward,
-            fourthRewardValue: fourthRewardValue,
-            fifthReward: fifthReward,
-            fifthRewardValue: fifthRewardValue,
-          },
-        ],
-      },
-    ],
-  };
+      // Fetch campaigns associated with the artist
+      const [campaignRows] = await pool.query(
+        "SELECT * FROM campaigns WHERE artist_id = ?",
+        [artistId]
+      );
 
-  editArtist.push(editedCampaign);
+      // Attach the campaigns to the artist data
+      artist.campaigns = campaignRows;
 
-  fs.writeFileSync("./data/artist-details.json", JSON.stringify(editArtist));
-  res.status(201).send("Campaign Succesfully edited");
+      // Send the artist data with campaigns as a response
+      res.json(artist);
+    }
+  } catch (error) {
+    console.error("Error fetching artist:", error);
+    res.status(500).send("Internal Server Error");
+  }
+});
+
+// Add a new artist - No authentication required
+router.post("/", async (req, res) => {
+  try {
+    const { artistname, image } = req.body;
+    const newId = uuid();
+    await pool.query(
+      "INSERT INTO artists (id, artistname, image) VALUES (?, ?, ?)",
+      [newId, artistname, image]
+    );
+    res.status(201).send({ message: "New artist created", id: newId });
+  } catch (err) {
+    console.error("Failed to create artist:", err);
+    res.status(500).send("Internal Server Error");
+  }
+});
+
+// Update an artist by id - No authentication required
+router.put("/:id", async (req, res) => {
+  try {
+    const { artistname, image } = req.body;
+    await pool.query(
+      "UPDATE artists SET artistname = ?, image = ? WHERE id = ?",
+      [artistname, image, req.params.id]
+    );
+    res.status(200).send("Artist updated successfully");
+  } catch (err) {
+    console.error("Failed to update artist:", err);
+    res.status(500).send("Internal Server Error");
+  }
 });
 
 module.exports = router;
